@@ -1,14 +1,12 @@
 'use string';
 
 const hours = prompt(
-	'Будь ласка, введіть кількість годин для конвертації в секунди:'
+	'Please enter the number of hours for conversion to seconds:'
 );
 
 if (!isNaN(hours)) {
 	const seconds = hours * 3600;
-	alert(`У ${hours} годиах є ${seconds} секунд.`);
+	alert(`In ${hours} hours, there are ${seconds} seconds.`);
 } else {
-	alert(
-		'Будь ласка, введіть числове значення кількості годин для конвертації!'
-	);
+	alert('Please enter a numeric value for the number of hours to convert!');
 }
