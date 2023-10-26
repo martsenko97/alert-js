@@ -15,8 +15,10 @@ while (true) {
 			break;
 		}
 
+		userInput = userInput.toLowerCase();
+
 		if (
-			['Add', 'Diff', 'Mult', 'Div', 'Sqrt', 'Sin', 'Cos', 'Exp'].includes(
+			['add', 'diff', 'mult', 'div', 'sqrt', 'sin', 'cos', 'exp'].includes(
 				userInput
 			)
 		) {
@@ -28,7 +30,7 @@ while (true) {
 		}
 	}
 
-	if (['Add', 'Diff', 'Mult', 'Div'].includes(userInput)) {
+	if (['add', 'diff', 'mult', 'div'].includes(userInput)) {
 		let validInput = false;
 
 		while (!validInput) {
@@ -58,10 +60,8 @@ while (true) {
 				} else {
 					validInput = true;
 
-					let result;
-
 					switch (userInput) {
-						case 'Add':
+						case 'add':
 							alert(
 								`Sum of ${firstNumber} and ${secondNumber} is ${
 									firstNumber + secondNumber
@@ -69,7 +69,7 @@ while (true) {
 							);
 							break;
 
-						case 'Diff':
+						case 'diff':
 							alert(
 								`Diff of ${firstNumber} and ${secondNumber} is ${
 									firstNumber - secondNumber
@@ -77,7 +77,7 @@ while (true) {
 							);
 							break;
 
-						case 'Mult':
+						case 'mult':
 							alert(
 								`Mult of ${firstNumber} and ${secondNumber} is ${
 									firstNumber * secondNumber
@@ -85,7 +85,7 @@ while (true) {
 							);
 							break;
 
-						case 'Div':
+						case 'div':
 							if (secondNumber === 0) {
 								alert('Division by zero is not allowed.');
 							} else {
@@ -100,7 +100,7 @@ while (true) {
 				}
 			}
 		}
-	} else if (['Sqrt', 'Sin', 'Cos', 'Exp'].includes(userInput)) {
+	} else if (['sqrt', 'sin', 'cos', 'exp'].includes(userInput)) {
 		let validInput = false;
 
 		while (!validInput) {
@@ -118,22 +118,20 @@ while (true) {
 			} else {
 				validInput = true;
 
-				let result;
-
 				switch (userInput) {
-					case 'Sqrt':
+					case 'sqrt':
 						alert(
 							`The square root of ${enterNumber} is ${Math.sqrt(enterNumber)}`
 						);
 						break;
 
-					case 'Sin':
+					case 'sin':
 						alert(
 							`The sine of a number ${enterNumber} is ${Math.sin(enterNumber)}`
 						);
 						break;
 
-					case 'Cos':
+					case 'cos':
 						alert(
 							`The cosine of a number ${enterNumber} is ${Math.cos(
 								enterNumber
@@ -141,7 +139,7 @@ while (true) {
 						);
 						break;
 
-					case 'Exp':
+					case 'exp':
 						alert(
 							`The exponential value of ${enterNumber} is ${Math.exp(
 								enterNumber
@@ -153,7 +151,7 @@ while (true) {
 		}
 	}
 
-	let continueCalculation = confirm('Do you want continue work with me?');
+	let continueCalculation = confirm('Do you want to continue working with me?');
 
 	if (!continueCalculation) {
 		alert('Goodbye, see you later.');
