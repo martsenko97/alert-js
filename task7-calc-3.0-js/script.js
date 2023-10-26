@@ -107,7 +107,7 @@ while (true) {
 			let enterNumber = prompt('Enter a number:');
 
 			if (enterNumber === null) {
-				alert('User canceled input. Goodbye, see you later.');
+				alert('Goodbye, see you later.');
 				break;
 			}
 
