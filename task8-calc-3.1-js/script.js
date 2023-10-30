@@ -10,7 +10,7 @@ while (continueCalculation) {
 
 	while (true) {
 		userInput = prompt(
-			'What action do you want to perform? Add, Diff, Mult, Div, Sqrt, Sin, Cos, Exp, or History'
+			'What action do you want to do Add, Diff, Mult, Div, Sqrt, Sin, Cos, Exp, or History'
 		);
 
 		if (userInput === null) {
@@ -23,7 +23,7 @@ while (continueCalculation) {
 
 		if (userInput === 'history') {
 			if (history.length === 0) {
-				alert("You haven't performed any operations yet.");
+				alert("You haven't done any operations yet.");
 			} else {
 				let historyMessage = 'Your operations:\n';
 				history.forEach(operation => {
@@ -54,7 +54,7 @@ while (continueCalculation) {
 		let validInput = false;
 
 		while (!validInput) {
-			let firstNumber = prompt('Enter the first number:');
+			let firstNumber = prompt('Enter first number:');
 
 			if (firstNumber === null) {
 				alert('Goodbye, see you later.');
@@ -65,7 +65,7 @@ while (continueCalculation) {
 			firstNumber = parseFloat(firstNumber);
 
 			if (isNaN(firstNumber)) {
-				alert('Invalid input. Please enter a valid number.');
+				alert('This is a bad digit. Please enter a valid number.');
 			} else {
 				let secondNumber = prompt('Enter the second number:');
 
@@ -78,7 +78,7 @@ while (continueCalculation) {
 				secondNumber = parseFloat(secondNumber);
 
 				if (isNaN(secondNumber)) {
-					alert('Invalid input. Please enter a valid number.');
+					alert('This is a bad digit. Please enter a valid number.');
 				} else {
 					validInput = true;
 
@@ -100,7 +100,7 @@ while (continueCalculation) {
 						case 'mult':
 							let mult = firstNumber * secondNumber;
 							history.push(`Mult: ${firstNumber} * ${secondNumber} = ${mult}`);
-							alert(`Product of ${firstNumber} and ${secondNumber} is ${mult}`);
+							alert(`Mult of ${firstNumber} and ${secondNumber} is ${mult}`);
 							break;
 
 						case 'div':
@@ -133,7 +133,7 @@ while (continueCalculation) {
 			enterNumber = parseFloat(enterNumber);
 
 			if (isNaN(enterNumber)) {
-				alert('Invalid input. Please enter a valid number.');
+				alert('This is a bad digit. Please enter a valid number.');
 			} else {
 				validInput = true;
 
