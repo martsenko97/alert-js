@@ -10,7 +10,7 @@ while (continueCalculation) {
 
 	while (true) {
 		userInput = prompt(
-			'What action you want to do? Add, Diff, Mult, Div, Sqrt, Sin, Cos, Exp, or History'
+			'What action do you want to perform? Add, Diff, Mult, Div, Sqrt, Sin, Cos, Exp, or History'
 		);
 
 		if (userInput === null) {
@@ -23,14 +23,16 @@ while (continueCalculation) {
 
 		if (userInput === 'history') {
 			if (history.length === 0) {
-				alert("You haven't done any operations yet.");
+				alert("You haven't performed any operations yet.");
 			} else {
-				let historyMessage = 'Your operation:\n';
+				let historyMessage = 'Your operations:\n';
 				history.forEach(operation => {
 					historyMessage += operation + '\n';
 				});
 				alert(historyMessage);
 			}
+
+			continueCalculation = confirm('Do you want to continue working with me?');
 		} else if (
 			['add', 'diff', 'mult', 'div', 'sqrt', 'sin', 'cos', 'exp'].includes(
 				userInput
@@ -52,7 +54,7 @@ while (continueCalculation) {
 		let validInput = false;
 
 		while (!validInput) {
-			let firstNumber = prompt('Enter first number:');
+			let firstNumber = prompt('Enter the first number:');
 
 			if (firstNumber === null) {
 				alert('Goodbye, see you later.');
@@ -63,7 +65,7 @@ while (continueCalculation) {
 			firstNumber = parseFloat(firstNumber);
 
 			if (isNaN(firstNumber)) {
-				alert('This is a bad digit. Please enter a correct digit.');
+				alert('Invalid input. Please enter a valid number.');
 			} else {
 				let secondNumber = prompt('Enter the second number:');
 
@@ -76,7 +78,7 @@ while (continueCalculation) {
 				secondNumber = parseFloat(secondNumber);
 
 				if (isNaN(secondNumber)) {
-					alert('This is a bad digit. Please enter a correct digit.');
+					alert('Invalid input. Please enter a valid number.');
 				} else {
 					validInput = true;
 
@@ -90,13 +92,15 @@ while (continueCalculation) {
 						case 'diff':
 							let diff = firstNumber - secondNumber;
 							history.push(`Diff: ${firstNumber} - ${secondNumber} = ${diff}`);
-							alert(`Diff of ${firstNumber} and ${secondNumber} is ${diff}`);
+							alert(
+								`Difference between ${firstNumber} and ${secondNumber} is ${diff}`
+							);
 							break;
 
 						case 'mult':
 							let mult = firstNumber * secondNumber;
 							history.push(`Mult: ${firstNumber} * ${secondNumber} = ${mult}`);
-							alert(`Mult of ${firstNumber} and ${secondNumber} is ${mult}`);
+							alert(`Product of ${firstNumber} and ${secondNumber} is ${mult}`);
 							break;
 
 						case 'div':
@@ -105,7 +109,9 @@ while (continueCalculation) {
 							} else {
 								let div = firstNumber / secondNumber;
 								history.push(`Div: ${firstNumber} / ${secondNumber} = ${div}`);
-								alert(`Div of ${firstNumber} and ${secondNumber} is ${div}`);
+								alert(
+									`Division of ${firstNumber} by ${secondNumber} is ${div}`
+								);
 							}
 							break;
 					}
@@ -127,27 +133,27 @@ while (continueCalculation) {
 			enterNumber = parseFloat(enterNumber);
 
 			if (isNaN(enterNumber)) {
-				alert('This is a bad digit. Please enter a correct digit.');
+				alert('Invalid input. Please enter a valid number.');
 			} else {
 				validInput = true;
 
 				switch (userInput) {
 					case 'sqrt':
 						let sqrt = Math.sqrt(enterNumber);
-						history.push(`Sqrt: ${enterNumber} = ${sqrt}`);
+						history.push(`Sqrt: √${enterNumber} = ${sqrt}`);
 						alert(`The square root of ${enterNumber} is ${sqrt}`);
 						break;
 
 					case 'sin':
 						let sin = Math.sin(enterNumber);
 						history.push(`Sin: sin(${enterNumber}) = ${sin}`);
-						alert(`The sine of a number ${enterNumber} is ${sin}`);
+						alert(`The sine of ${enterNumber} is ${sin}`);
 						break;
 
 					case 'cos':
 						let cos = Math.cos(enterNumber);
 						history.push(`Cos: cos(${enterNumber}) = ${cos}`);
-						alert(`The cosine of a number ${enterNumber} is ${cos}`);
+						alert(`The cosine of ${enterNumber} is ${cos}`);
 						break;
 
 					case 'exp':
@@ -158,9 +164,5 @@ while (continueCalculation) {
 				}
 			}
 		}
-	}
-
-	if (continueCalculation) {
-		continueCalculation = confirm('Do you want to continue working with me?');
 	}
 }
