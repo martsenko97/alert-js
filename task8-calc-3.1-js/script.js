@@ -10,7 +10,7 @@ while (continueCalculation) {
 
 	while (true) {
 		userInput = prompt(
-			'What action do you want to do Add, Diff, Mult, Div, Sqrt, Sin, Cos, Exp, or History'
+			'What action do you want to do? Add, Diff, Mult, Div, Sqrt, Sin, Cos, Exp, or History'
 		);
 
 		if (userInput === null) {
@@ -30,9 +30,15 @@ while (continueCalculation) {
 					historyMessage += operation + '\n';
 				});
 				alert(historyMessage);
+				const continueWorking = confirm(
+					'Do you want to continue working with me?'
+				);
+				if (!continueWorking) {
+					continueCalculation = false;
+					alert('Goodbye, see you later.');
+					break;
+				}
 			}
-
-			continueCalculation = confirm('Do you want to continue working with me?');
 		} else if (
 			['add', 'diff', 'mult', 'div', 'sqrt', 'sin', 'cos', 'exp'].includes(
 				userInput
@@ -67,7 +73,7 @@ while (continueCalculation) {
 			if (isNaN(firstNumber)) {
 				alert('This is a bad digit. Please enter a valid number.');
 			} else {
-				let secondNumber = prompt('Enter the second number:');
+				let secondNumber = prompt('Enter second number:');
 
 				if (secondNumber === null) {
 					alert('Goodbye, see you later.');
@@ -159,7 +165,7 @@ while (continueCalculation) {
 					case 'exp':
 						let exp = Math.exp(enterNumber);
 						history.push(`Exp: exp(${enterNumber}) = ${exp}`);
-						alert(`The exponential value of ${enterNumber} is ${exp}`);
+						alert(`Exponential value of ${enterNumber} is ${exp}`);
 						break;
 				}
 			}
