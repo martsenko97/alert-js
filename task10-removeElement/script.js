@@ -1,3 +1,5 @@
+'use strict';
+
 function removeElement(array, item) {
 	for (let i = array.length - 1; i >= 0; i--) {
 		if (
