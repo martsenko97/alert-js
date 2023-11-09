@@ -1,7 +1,7 @@
 'use strict';
 
 function createHash(key, secret) {
-	const hash = key + secret;
+	const hash = btoa(key + secret);
 	return hash;
 }
 
@@ -15,5 +15,5 @@ while (true) {
 	}
 
 	const hash = createHash(userKey, secret);
-	console.log(`Hash for key "${userKey}": ${hash}`);
+	alert(`Hash for key "${userKey}": ${hash}`);
 }
